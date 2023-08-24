@@ -27,17 +27,13 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {
-      "eas": {
-        "projectId": "b11987c7-69e6-441c-bdac-6f1b68f0f4fb"
-      }
-    },
+    "extra": {},
     "owner": "blimmer_hb",
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/b11987c7-69e6-441c-bdac-6f1b68f0f4fb"
+      "useClassicUpdates": true
     }
   }
 }

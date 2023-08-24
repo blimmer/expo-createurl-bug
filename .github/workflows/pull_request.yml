@@ -17,16 +17,20 @@ jobs:
           node-version: 18.x
           cache: npm
 
-      - name: 🏗 Setup EAS
+      - name: 🏗 Setup Expo
         uses: expo/expo-github-action@v8
         with:
-          eas-version: latest
+          expo-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: 📦 Install dependencies
         run: npm ci
 
-      - name: 🚀 Create preview
-        uses: expo/expo-github-action/preview@v8
+      - name: 🚀 Create preview (Classic)
+        run: |
+          expo publish --release-channel=preview-classic --non-interactive
+
+      - name: 💬 Comment in preview
+        uses: expo/expo-github-action/preview-comment@v8
         with:
-          command: eas update --channel=preview --auto
+          channel: preview-classic
