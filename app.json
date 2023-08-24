@@ -29,9 +29,6 @@
     },
     "extra": {},
     "owner": "blimmer_hb",
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
     "updates": {
       "useClassicUpdates": true
     }
