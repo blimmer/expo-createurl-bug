@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b11987c7-69e6-441c-bdac-6f1b68f0f4fb"
+      }
+    },
+    "owner": "blimmer_hb"
   }
 }
