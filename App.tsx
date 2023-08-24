@@ -1,10 +1,13 @@
+import { createURL } from 'expo-linking';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  const link = createURL('/')
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>The link is {link}</Text>
       <StatusBar style="auto" />
     </View>
   );
