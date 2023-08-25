@@ -1,10 +1,18 @@
+import { createURL, getInitialURL } from 'expo-linking';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  const link = createURL('/')
+
+  const [initialUrl, setInitialUrl] = useState<string | null>(null);
+  getInitialURL().then(setInitialUrl);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>The link is {link}</Text>
+      <Text>The initial URL was {initialUrl}</Text>
       <StatusBar style="auto" />
     </View>
   );
