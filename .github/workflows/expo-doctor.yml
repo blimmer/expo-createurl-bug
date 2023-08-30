@@ -1,0 +1,24 @@
+name: Expo Doctor
+on:
+  push:
+    paths:
+      - eas.json
+      - app.json
+      - package.json
+      - package-lock.json
+      - .github/workflows/expo-doctor.yml
+
+jobs:
+  expo-doctor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+      - name: Run expo-doctor
+        run: npx expo-doctor@latest
